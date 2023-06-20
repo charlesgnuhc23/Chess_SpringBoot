@@ -1,0 +1,44 @@
+class Game
+	Board
+	int turn - white, black, game over
+	int moveCount
+	boolean inCheck
+	List<Board> moveHistory
+	int blackMaterial
+	int whiteMaterial
+	bool blackCanCastle
+	bool whiteCanCastle
+	clock later
+
+	resetGame()
+	movePiece(oldCoord, newCoord) - how to castle? maybe should be pgn
+	List<Coord> getLegalMoves(coord)
+
+class Board
+	Piece[][]
+
+	resetBoard()
+	movePiece(oldCoord, newCoord)
+
+class Piece
+	subclass pawn, knight, etc.
+		king / rook - castle
+		pawn - first move 2 squares, en passant
+
+	int color - black or white
+	Coord currentPosition
+
+	List<Coord> getLegalMoves(Piece[][] Board)
+	move(oldCoord, newCoord)
+
+class Coord
+	String coordinate - A1-H8
+	Point - corresponding array indices
+
+	setCoord(Point, Coordinate)
+	--- helper functions ---
+	String pointToCoordinate(Point)
+	Point coordinateToPoint(Coordinate)
+
+class Point
+	int x, y - indices of the array in board
