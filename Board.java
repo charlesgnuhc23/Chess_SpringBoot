@@ -1,5 +1,5 @@
 public class Board {
-    Piece[][] board;
+    private Piece[][] board;
 
     public Board() {}
 
@@ -8,9 +8,14 @@ public class Board {
 
     }
 
-    public Piece[][] movePiece(Coord oldCoord, Coord newCoord)
+    public Piece[][] getBoard()
     {
-        
         return board;
+    }
+
+    public Board movePiece(Coord oldCoord, Coord newCoord)
+    {
+
+        return this;
     }
 }
