@@ -1,6 +1,9 @@
 public class Coord {
     public Coord() {}
     
+    public Coord(int i, int j) {
+    }
+
     Point point;       // x = 1st array index, y = second array index
     String coordinate; // A1-H8
 
