@@ -18,9 +18,9 @@ public class Bishop implements Piece {
         // up and left
         for (int i = x; i > 0; i--) {
             for (int j = y; j < 7; j++) {
-                Piece piece = board.getBoard()[i-1][y+1];           // check the square at xy
+                Piece piece = board.getBoard()[i-1][j+1];           // check the square at xy
                 if (piece == null || piece.color != color) {        // square open OR capturable piece (opponent), piece.color default to -1
-                    ret.add(new Coord(i-1, y+1));
+                    ret.add(new Coord(i-1, j+1));
                     break;
                 }
             }
@@ -29,9 +29,9 @@ public class Bishop implements Piece {
         // up and right
         for (int i = x; i < 7; i++) {
             for (int j = y; j < 7; j++) {
-                Piece piece = board.getBoard()[i+1][y+1];           // check the square at xy
+                Piece piece = board.getBoard()[i+1][j+1];           // check the square at xy
                 if (piece == null || piece.color != color) {        // square open OR capturable piece (opponent), piece.color default to -1
-                    ret.add(new Coord(i+1, y+1));
+                    ret.add(new Coord(i+1, j+1));
                     break;
                 }
                 
@@ -41,9 +41,9 @@ public class Bishop implements Piece {
         // down and left
         for (int i = x; i > 0; i--) {
             for (int j = y; j > 0; j--) {
-                Piece piece = board.getBoard()[i-1][y-1];           // check the square at xy
+                Piece piece = board.getBoard()[i-1][j-1];           // check the square at xy
                 if (piece == null || piece.color != color) {        // square open OR capturable piece (opponent), piece.color default to -1
-                    ret.add(new Coord(i-1, y-1));
+                    ret.add(new Coord(i-1, j-1));
                     break;
                 }
                 
@@ -53,9 +53,9 @@ public class Bishop implements Piece {
         // down and right
         for (int i = x; i > 7; i++) {
             for (int j = y; j > 0; j--) {
-                Piece piece = board.getBoard()[i+1][y-1];           // check the square at xy
+                Piece piece = board.getBoard()[i+1][j-1];           // check the square at xy
                 if (piece == null || piece.color != color) {        // square open OR capturable piece (opponent), piece.color default to -1
-                    ret.add(new Coord(i+1, y-1));
+                    ret.add(new Coord(i+1, j-1));
                     break;
                 }
                 
