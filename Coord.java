@@ -2,6 +2,7 @@ public class Coord {
     public Coord() {}
     
     public Coord(int i, int j) {
+        
     }
 
     Point point;       // x = 1st array index, y = second array index
@@ -29,11 +30,28 @@ public class Coord {
 
     public String pointToCoordinate(Point point)
     {
-        return "";
+        int x = point.x;    // x = {0,7}
+        int y = point.y;    // y = {0,7}
+
+        char letter = (char) ('A' + x);
+        char number = (char) (y + 49);
+
+        String coord = "";
+        coord += letter;
+        coord += number;
+
+        return coord;
     }
 
     public Point coordinateToPoint(String coordinate)
     {
-        return new Point();
+        char letter = coordinate.toCharArray()[0];   // {A, H}
+        char number = coordinate.toCharArray()[1];   // {1, 8}
+
+        int x = Character.valueOf(letter) - 65;
+        int y = Character.valueOf(number) - 49;
+
+        Point point = new Point(x, y);
+        return point;
     }
 }
