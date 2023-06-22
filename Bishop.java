@@ -65,7 +65,6 @@ public class Bishop implements Piece {
         return ret;
     }
 
-    
     public boolean move(Coord newCoord) {
         return true;
     }
