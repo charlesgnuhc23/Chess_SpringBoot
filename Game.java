@@ -9,8 +9,10 @@ public class Game {
     private boolean inCheck;            // is th current player in check?
     private int blackMaterial;
     private int whiteMaterial;
-    private boolean whiteCastleRights;
-    private boolean blackCastleRights;
+    private boolean whiteCastleRightsK;
+    private boolean whiteCastleRightsQ;
+    private boolean blackCastleRightsK;
+    private boolean blackCastleRightsQ;
 
     private List<Board> boardHistory;
     
@@ -21,14 +23,16 @@ public class Game {
 
     public void resetGame()
     {
-        board = new Board();
+        board = new Board();    // need to make this board with correct starting squares
         turn = 0;
         moveCount = 1;
         inCheck = false;
         blackMaterial = 0;
         whiteMaterial = 0;
-        whiteCastleRights = true;
-        blackCastleRights = true;
+        whiteCastleRightsK = true;
+        whiteCastleRightsQ = true;
+        blackCastleRightsK = true;
+        blackCastleRightsQ = true;
     }
 
     public boolean movePiece(Coord oldCoord, Coord newCoord)
