@@ -1,13 +1,15 @@
+package pieces;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Queen implements Piece {
+import board.Board;
+import board.Coord;
 
-    private int color;       // 0 - white, 1 - black
-    private Coord position;
+public class Queen extends Piece {
 
-    public Queen() {}
-
+    Queen(Coord position, Color color) {
+        super(position, color);
+    }
 
     public List<Coord> getLegalMoves(Board board) {
         int x = position.getPoint().x;
@@ -18,8 +20,8 @@ public class Queen implements Piece {
         // up and left
         for (int i = x; i > 0; i--) {
             for (int j = y; j < 7; j++) {
-                Piece piece = board.getBoard()[i-1][j+1];           // check the square at xy
-                if (piece == null || piece.color != color) {        // square open OR capturable piece (opponent), piece.color default to -1
+                Piece checkPiece = board.getBoard()[i-1][j+1];           // check the square at xy
+                if (checkPiece == null || checkPiece.color != this.color) {        // square open OR capturable piece (opponent), piece.color default to -1
                     ret.add(new Coord(i-1, j+1));
                     break;
                 }
@@ -29,8 +31,8 @@ public class Queen implements Piece {
         // up and right
         for (int i = x; i < 7; i++) {
             for (int j = y; j < 7; j++) {
-                Piece piece = board.getBoard()[i+1][j+1];           // check the square at xy
-                if (piece == null || piece.color != color) {        // square open OR capturable piece (opponent), piece.color default to -1
+                Piece checkPiece = board.getBoard()[i+1][j+1];           // check the square at xy
+                if (checkPiece == null || checkPiece.color != this.color) {        // square open OR capturable piece (opponent), piece.color default to -1
                     ret.add(new Coord(i+1, j+1));
                     break;
                 }
@@ -41,8 +43,8 @@ public class Queen implements Piece {
         // down and left
         for (int i = x; i > 0; i--) {
             for (int j = y; j > 0; j--) {
-                Piece piece = board.getBoard()[i-1][j-1];           // check the square at xy
-                if (piece == null || piece.color != color) {        // square open OR capturable piece (opponent), piece.color default to -1
+                Piece checkPiece = board.getBoard()[i-1][j-1];           // check the square at xy
+                if (checkPiece == null || checkPiece.color != this.color) {        // square open OR capturable piece (opponent), piece.color default to -1
                     ret.add(new Coord(i-1, j-1));
                     break;
                 }
@@ -53,8 +55,8 @@ public class Queen implements Piece {
         // down and right
         for (int i = x; i > 7; i++) {
             for (int j = y; j > 0; j--) {
-                Piece piece = board.getBoard()[i+1][j-1];           // check the square at xy
-                if (piece == null || piece.color != color) {        // square open OR capturable piece (opponent), piece.color default to -1
+                Piece checkPiece = board.getBoard()[i+1][j-1];           // check the square at xy
+                if (checkPiece == null || checkPiece.color != this.color) {        // square open OR capturable piece (opponent), piece.color default to -1
                     ret.add(new Coord(i+1, j-1));
                     break;
                 }
@@ -64,8 +66,8 @@ public class Queen implements Piece {
 
         // left
         for (int i = x; i > 0; i--) {
-            Piece piece = board.getBoard()[i-1][y];
-            if (piece == null || piece.color != color) {
+            Piece checkPiece = board.getBoard()[i-1][y];
+            if (checkPiece == null || checkPiece.color != this.color) {
                 ret.add(new Coord(i-1, y));
                 break;
             }
@@ -73,8 +75,8 @@ public class Queen implements Piece {
 
         // right
         for (int i = x; i < 7; i++) {
-            Piece piece = board.getBoard()[i+1][y];
-            if (piece == null || piece.color != color) {
+            Piece checkPiece = board.getBoard()[i+1][y];
+            if (checkPiece == null || checkPiece.color != this.color) {
                 ret.add(new Coord(i+1, y));
                 break;
             }
@@ -82,8 +84,8 @@ public class Queen implements Piece {
 
         // up
         for (int j = y; j < 7; j++) {
-            Piece piece = board.getBoard()[x][j+1];
-            if (piece == null || piece.color != color) {
+            Piece checkPiece = board.getBoard()[x][j+1];
+            if (checkPiece == null || checkPiece.color != this.color) {
                 ret.add(new Coord(x, j+1));
                 break;
             }
@@ -91,8 +93,8 @@ public class Queen implements Piece {
 
         // down
         for (int j = y; j > 0; j--) {
-            Piece piece = board.getBoard()[x][j-1];
-            if (piece == null || piece.color != color) {
+            Piece checkPiece = board.getBoard()[x][j-1];
+            if (checkPiece == null || checkPiece.color != this.color) {
                 ret.add(new Coord(x, j-1));
                 break;
             }

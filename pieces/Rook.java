@@ -1,13 +1,15 @@
+package pieces;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Rook implements Piece {
+import board.Board;
+import board.Coord;
 
-    private int color;       // 0 - white, 1 - black
-    private Coord position;
+public class Rook extends Piece {
 
-    public Rook() {}
-
+    Rook(Coord position, Color color) {
+        super(position, color);
+    }
 
     public List<Coord> getLegalMoves(Board board) {
         int x = position.getPoint().x;
@@ -17,8 +19,8 @@ public class Rook implements Piece {
         
         // left
         for (int i = x; i > 0; i--) {
-            Piece piece = board.getBoard()[i-1][y];
-            if (piece == null || piece.color != color) {
+            Piece checkPiece = board.getBoard()[i-1][y];
+            if (checkPiece == null || checkPiece.color != this.color) {
                 ret.add(new Coord(i-1, y));
                 break;
             }
@@ -26,8 +28,8 @@ public class Rook implements Piece {
 
         // right
         for (int i = x; i < 7; i++) {
-            Piece piece = board.getBoard()[i+1][y];
-            if (piece == null || piece.color != color) {
+            Piece checkPiece = board.getBoard()[i+1][y];
+            if (checkPiece == null || checkPiece.color != this.color) {
                 ret.add(new Coord(i+1, y));
                 break;
             }
@@ -35,8 +37,8 @@ public class Rook implements Piece {
 
         // up
         for (int j = y; j < 7; j++) {
-            Piece piece = board.getBoard()[x][j+1];
-            if (piece == null || piece.color != color) {
+            Piece checkPiece = board.getBoard()[x][j+1];
+            if (checkPiece == null || checkPiece.color != this.color) {
                 ret.add(new Coord(x, j+1));
                 break;
             }
@@ -44,8 +46,8 @@ public class Rook implements Piece {
 
         // down
         for (int j = y; j > 0; j--) {
-            Piece piece = board.getBoard()[x][j-1];
-            if (piece == null || piece.color != color) {
+            Piece checkPiece = board.getBoard()[x][j-1];
+            if (checkPiece == null || checkPiece.color != this.color) {
                 ret.add(new Coord(x, j-1));
                 break;
             }
