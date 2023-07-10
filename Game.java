@@ -1,6 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
 
+import board.Board;
+import board.Coord;
+
 public class Game {
 
     private Board board;
