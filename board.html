@@ -1,98 +1,99 @@
 <html>
-    <head>
-        <title>Chessboard</title>
-        <link rel="stylesheet" href="board.css">
-        <script src="board.js"></script>
-    </head>
+<head>
+    <title>Chessboard</title>
+    <link rel="stylesheet" href="board.css">
+</head>
 <body>
-    <div class = "Chess WebApp">
-        <div class = "row">
-            <div class = "square light"> <img src = "images/blackRook.png" class = "piece"> </div>
-            <div class = "square dark"> <img src = "images/blackKnight.png" class = "piece"> </div>
-            <div class = "square light"> <img src = "images/blackBishop.png" class = "piece"> </div>
-            <div class = "square dark"> <img src = "images/blackQueen.png" class = "piece"> </div>
-            <div class = "square light"> <img src = "images/blackKing.png" class = "piece"> </div>
-            <div class = "square dark"> <img src = "images/blackBishop.png" class = "piece"> </div>
-            <div class = "square light"> <img src = "images/blackKnight.png" class = "piece"> </div>
-            <div class = "square dark"> <img src = "images/blackRook.png" class = "piece"> </div>
-        </div>
-    
-        <div class = "row">
-            <div class = "square dark"> <img src = "images/blackPawn.png" class = "piece"> </div>
-            <div class = "square light"> <img src = "images/blackPawn.png" class = "piece"> </div>
-            <div class = "square dark"> <img src = "images/blackPawn.png" class = "piece"> </div>
-            <div class = "square light"> <img src = "images/blackPawn.png" class = "piece"> </div>
-            <div class = "square dark"> <img src = "images/blackPawn.png" class = "piece"> </div>
-            <div class = "square light"> <img src = "images/blackPawn.png" class = "piece"> </div>
-            <div class = "square dark"> <img src = "images/blackPawn.png" class = "piece"> </div>
-            <div class = "square light"> <img src = "images/blackPawn.png" class = "piece"> </div>
+    <div class="Chess WebApp">
+        <div class="row">
+            <div class="square light"> <div class="piece" id="piece-0-0"></div> </div>
+            <div class="square dark"> <div class="piece" id="piece-0-1"></div> </div>
+            <div class="square light"> <div class="piece" id="piece-0-2"></div> </div>
+            <div class="square dark"> <div class="piece" id="piece-0-3"></div> </div>
+            <div class="square light"> <div class="piece" id="piece-0-4"></div> </div>
+            <div class="square dark"> <div class="piece" id="piece-0-5"></div> </div>
+            <div class="square light"> <div class="piece" id="piece-0-6"></div> </div>
+            <div class="square dark"> <div class="piece" id="piece-0-7"></div> </div>
         </div>
 
-        <div class = "row">
-            <div class = "square light"> </div>
-            <div class = "square dark"> </div>
-            <div class = "square light"> </div>
-            <div class = "square dark"> </div>
-            <div class = "square light"> </div>
-            <div class = "square dark"> </div>
-            <div class = "square light"> </div>
-            <div class = "square dark"> </div>
-        </div>
-    
-        <div class = "row">
-            <div class = "square dark"> </div>
-            <div class = "square light"> </div>
-            <div class = "square dark"> </div>
-            <div class = "square light"> </div>
-            <div class = "square dark"> </div>
-            <div class = "square light"> </div>
-            <div class = "square dark"> </div>
-            <div class = "square light"> </div>
+        <div class="row">
+            <div class="square dark"> <div class="piece" id="piece-1-0"></div> </div>
+            <div class="square light"> <div class="piece" id="piece-1-1"></div> </div>
+            <div class="square dark"> <div class="piece" id="piece-1-2"></div> </div>
+            <div class="square light"> <div class="piece" id="piece-1-3"></div> </div>
+            <div class="square dark"> <div class="piece" id="piece-1-4"></div> </div>
+            <div class="square light"> <div class="piece" id="piece-1-5"></div> </div>
+            <div class="square dark"> <div class="piece" id="piece-1-6"></div> </div>
+            <div class="square light"> <div class="piece" id="piece-1-7"></div> </div>
         </div>
 
-        <div class = "row">
-            <div class = "square light"> </div>
-            <div class = "square dark"> </div>
-            <div class = "square light"> </div>
-            <div class = "square dark"> </div>
-            <div class = "square light"> </div>
-            <div class = "square dark"> </div>
-            <div class = "square light"> </div>
-            <div class = "square dark"> </div>
-        </div>
-    
-        <div class = "row">
-            <div class = "square dark"> </div>
-            <div class = "square light"> </div>
-            <div class = "square dark"> </div>
-            <div class = "square light"> </div>
-            <div class = "square dark"> </div>
-            <div class = "square light"> </div>
-            <div class = "square dark"> </div>
-            <div class = "square light"> </div>
+        <div class="row">
+            <div class="square light"> <div class="piece" id="piece-2-0"></div> </div>
+            <div class="square dark"> <div class="piece" id="piece-2-1"></div> </div>
+            <div class="square light"> <div class="piece" id="piece-2-2"></div> </div>
+            <div class="square dark"> <div class="piece" id="piece-2-3"></div> </div>
+            <div class="square light"> <div class="piece" id="piece-2-4"></div> </div>
+            <div class="square dark"> <div class="piece" id="piece-2-5"></div> </div>
+            <div class="square light"> <div class="piece" id="piece-2-6"></div> </div>
+            <div class="square dark"> <div class="piece" id="piece-2-7"></div> </div>
         </div>
 
-        <div class = "row">
-            <div class = "square light"> <img src = "images/whitePawn.png" class = "piece"> </div>
-            <div class = "square dark"> <img src = "images/whitePawn.png" class = "piece"> </div>
-            <div class = "square light"> <img src = "images/whitePawn.png" class = "piece"> </div>
-            <div class = "square dark"> <img src = "images/whitePawn.png" class = "piece"> </div>
-            <div class = "square light"> <img src = "images/whitePawn.png" class = "piece"> </div>
-            <div class = "square dark"> <img src = "images/whitePawn.png" class = "piece"> </div>
-            <div class = "square light"> <img src = "images/whitePawn.png" class = "piece"> </div>
-            <div class = "square dark"> <img src = "images/whitePawn.png" class = "piece"> </div>
+        <div class="row">
+            <div class="square dark"> <div class="piece" id="piece-3-0"></div> </div>
+            <div class="square light"> <div class="piece" id="piece-3-1"></div> </div>
+            <div class="square dark"> <div class="piece" id="piece-3-2"></div> </div>
+            <div class="square light"> <div class="piece" id="piece-3-3"></div> </div>
+            <div class="square dark"> <div class="piece" id="piece-3-4"></div> </div>
+            <div class="square light"> <div class="piece" id="piece-3-5"></div> </div>
+            <div class="square dark"> <div class="piece" id="piece-3-6"></div> </div>
+            <div class="square light"> <div class="piece" id="piece-3-7"></div> </div>
         </div>
-    
-        <div class = "row">
-            <div class = "square dark"> <img src = "images/whiteRook.png" class = "piece"> </div>
-            <div class = "square light"> <img src = "images/whiteKnight.png" class = "piece"> </div>
-            <div class = "square dark"> <img src = "images/whiteBishop.png" class = "piece"> </div>
-            <div class = "square light"> <img src = "images/whiteQueen.png" class = "piece"> </div>
-            <div class = "square dark"> <img src = "images/whiteKing.png" class = "piece"> </div>
-            <div class = "square light"> <img src = "images/whiteBishop.png" class = "piece"> </div>
-            <div class = "square dark"> <img src = "images/whiteKnight.png" class = "piece"> </div>
-            <div class = "square light"> <img src = "images/whiteRook.png" class = "piece"> </div>
+
+        <div class="row">
+            <div class="square light"> <div class="piece" id="piece-4-0"></div> </div>
+            <div class="square dark"> <div class="piece" id="piece-4-1"></div> </div>
+            <div class="square light"> <div class="piece" id="piece-4-2"></div> </div>
+            <div class="square dark"> <div class="piece" id="piece-4-3"></div> </div>
+            <div class="square light"> <div class="piece" id="piece-4-4"></div> </div>
+            <div class="square dark"> <div class="piece" id="piece-4-5"></div> </div>
+            <div class="square light"> <div class="piece" id="piece-4-6"></div> </div>
+            <div class="square dark"> <div class="piece" id="piece-4-7"></div> </div>
         </div>
+
+        <div class="row">
+            <div class="square dark"> <div class="piece" id="piece-5-0"></div> </div>
+            <div class="square light"> <div class="piece" id="piece-5-1"></div> </div>
+            <div class="square dark"> <div class="piece" id="piece-5-2"></div> </div>
+            <div class="square light"> <div class="piece" id="piece-5-3"></div> </div>
+            <div class="square dark"> <div class="piece" id="piece-5-4"></div> </div>
+            <div class="square light"> <div class="piece" id="piece-5-5"></div> </div>
+            <div class="square dark"> <div class="piece" id="piece-5-6"></div> </div>
+            <div class="square light"> <div class="piece" id="piece-5-7"></div> </div>
+        </div>
+
+        <div class="row">
+            <div class="square light"> <div class="piece" id="piece-6-0"></div> </div>
+            <div class="square dark"> <div class="piece" id="piece-6-1"></div> </div>
+            <div class="square light"> <div class="piece" id="piece-6-2"></div> </div>
+            <div class="square dark"> <div class="piece" id="piece-6-3"></div> </div>
+            <div class="square light"> <div class="piece" id="piece-6-4"></div> </div>
+            <div class="square dark"> <div class="piece" id="piece-6-5"></div> </div>
+            <div class="square light"> <div class="piece" id="piece-6-6"></div> </div>
+            <div class="square dark"> <div class="piece" id="piece-6-7"></div> </div>
+        </div>
+
+        <div class="row">
+            <div class="square dark"> <div class="piece" id="piece-7-0"></div> </div>
+            <div class="square light"> <div class="piece" id="piece-7-1"></div> </div>
+            <div class="square dark"> <div class="piece" id="piece-7-2"></div> </div>
+            <div class="square light"> <div class="piece" id="piece-7-3"></div> </div>
+            <div class="square dark"> <div class="piece" id="piece-7-4"></div> </div>
+            <div class="square light"> <div class="piece" id="piece-7-5"></div> </div>
+            <div class="square dark"> <div class="piece" id="piece-7-6"></div> </div>
+            <div class="square light"> <div class="piece" id="piece-7-7"></div> </div>
+        </div>   
     </div>
+
+    <script src="board.js"></script>
 </body>
 </html>

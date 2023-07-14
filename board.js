@@ -1,4 +1,4 @@
-let board = [
+const board = [
     ['r', 'n', 'b', 'q', 'k', 'b', 'n', 'r'],
     ['p', 'p', 'p', 'p', 'p', 'p', 'p', 'p'],
     [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
@@ -7,42 +7,38 @@ let board = [
     [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
     ['P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'],
     ['R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R']
-]
+];
 
-function updateBoardUI() {
-    const chessboard = document.querySelector('.chessboard');
-    chessboard.innerHTML = '';
-  
+function populateChessboard() {
     for (let i = 0; i < 8; i++) {
-      for (let j = 0; j < 8; j++) {
-        const square = document.createElement('div');
-        square.classList.add('square');
-        square.classList.add((i + j) % 2 === 0 ? 'light' : 'dark');
-  
-        const piece = document.createElement('div');
-        piece.classList.add('piece');
-        piece.innerText = boardState[i][j];
-  
-        square.appendChild(piece);
-        chessboard.appendChild(square);
-      }
+        for (let j = 0; j < 8; j++) {
+            const piece = document.getElementById(`piece-${i}-${j}`);
+            piece.innerHTML = getPieceImage(board[i][j]);
+        }
     }
-  }
-
-// Function to handle user interactions (e.g., clicking a square)
-function handleSquareClick(event) {
-    const selectedSquare = event.target;
-    // Get the row and column of the selected square and perform logic based on the click
-  
-    // Example: If the square is clicked, toggle a class to highlight it
-    selectedSquare.classList.toggle('selected');
 }
 
-// Attach event listeners to squares
-const squares = document.querySelectorAll('.square');
-squares.forEach(square => {
-    square.addEventListener('click', handleSquareClick);
-});
+function getPieceImage(pieceCode) {
+    const pieceImages = {
+        'r': 'images/blackRook.png',
+        'n': 'images/blackKnight.png',
+        'b': 'images/blackBishop.png',
+        'q': 'images/blackQueen.png',
+        'k': 'images/blackKing.png',
+        'p': 'images/blackPawn.png',
+        'R': 'images/whiteRook.png',
+        'N': 'images/whiteKnight.png',
+        'B': 'images/whiteBishop.png',
+        'Q': 'images/whiteQueen.png',
+        'K': 'images/whiteKing.png',
+        'P': 'images/whitePawn.png'
+    };
 
-// Update the initial board UI
-updateBoardUI();
+    if (pieceCode === ' ') {
+        return '';
+    }
+
+    return `<img src="${pieceImages[pieceCode]}">`;
+}
+
+populateChessboard();
