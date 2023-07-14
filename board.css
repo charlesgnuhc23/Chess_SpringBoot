@@ -1,0 +1,41 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.chessboard {
+    width: 800px;
+    height: 800px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.light {
+    background-color: #eeeed2;
+}
+
+.dark {
+    background-color: #769656;
+}
+
+.piece {
+    max-width: 100%;
+    max-height: 100%;
+    width: 80%;
+    height: 80%;
+  }
