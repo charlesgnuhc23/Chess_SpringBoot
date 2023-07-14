@@ -3,26 +3,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 import board.Board;
-import board.Coord;
+import board.Square;
 
 public class Bishop extends Piece {
 
-    Bishop(Coord position, Color color) {
-        super(position, color);
+    public Bishop(Square square, String color) {
+        super(square, color, "Bishop");
     }
 
-    public List<Coord> getLegalMoves(Board board) {
-        int x = position.getPoint().x;
-        int y = position.getPoint().y;
+    public List<Square> getLegalMoves(Board board) {
+        int x = square.getX();
+        int y = square.getY();;
 
-        List<Coord> ret = new ArrayList<Coord>();
+        List<Square> ret = new ArrayList<Square>();
         
         // up and left
         for (int i = x; i > 0; i--) {
             for (int j = y; j < 7; j++) {
                 Piece checkPiece = board.getBoard()[i-1][j+1];           // check the square at xy
                 if (checkPiece == null || checkPiece.color != this.color) {        // square open OR capturable piece (opponent), piece.color default to -1
-                    ret.add(new Coord(i-1, j+1));
+                    ret.add(new Square(i-1, j+1));
                     break;
                 }
             }
@@ -33,7 +33,7 @@ public class Bishop extends Piece {
             for (int j = y; j < 7; j++) {
                 Piece checkPiece = board.getBoard()[i+1][j+1];           // check the square at xy
                 if (checkPiece == null || checkPiece.color != this.color) {        // square open OR capturable piece (opponent), piece.color default to -1
-                    ret.add(new Coord(i+1, j+1));
+                    ret.add(new Square(i+1, j+1));
                     break;
                 }
                 
@@ -45,7 +45,7 @@ public class Bishop extends Piece {
             for (int j = y; j > 0; j--) {
                 Piece checkPiece = board.getBoard()[i-1][j-1];           // check the square at xy
                 if (checkPiece == null || checkPiece.color != this.color) {        // square open OR capturable piece (opponent), piece.color default to -1
-                    ret.add(new Coord(i-1, j-1));
+                    ret.add(new Square(i-1, j-1));
                     break;
                 }
                 
@@ -57,7 +57,7 @@ public class Bishop extends Piece {
             for (int j = y; j > 0; j--) {
                 Piece checkPiece = board.getBoard()[i+1][j-1];           // check the square at xy
                 if (checkPiece == null || checkPiece.color != this.color) {        // square open OR capturable piece (opponent), piece.color default to -1
-                    ret.add(new Coord(i+1, j-1));
+                    ret.add(new Square(i+1, j-1));
                     break;
                 }
                 
@@ -65,10 +65,6 @@ public class Bishop extends Piece {
         }
         
         return ret;
-    }
-
-    public boolean move(Coord newCoord) {
-        return true;
     }
     
 }

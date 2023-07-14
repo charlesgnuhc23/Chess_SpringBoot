@@ -2,12 +2,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import board.Board;
-import board.Coord;
+import board.Square;
 
 public class Game {
 
     private Board board;
-    private int turn;           // 0 - white, 1 - black, 2 - nobody's turn
+    private int player;           // 0 - white, 1 - black, 2 - nobody's turn
     private int moveCount;      
     private boolean inCheck;            // is th current player in check?
     private int blackMaterial;
@@ -16,18 +16,17 @@ public class Game {
     private boolean whiteCastleRightsQ;
     private boolean blackCastleRightsK;
     private boolean blackCastleRightsQ;
+    public static Board chessboard;
 
     private List<Board> boardHistory;
     
-    public Game() 
-    {
-        resetGame();
+    public Game() {
+
     }
 
-    public void resetGame()
-    {
-        board = new Board();    // need to make this board with correct starting squares
-        turn = 0;
+    public void resetGame() {
+        
+        player = 0;
         moveCount = 1;
         inCheck = false;
         blackMaterial = 0;
@@ -38,26 +37,18 @@ public class Game {
         blackCastleRightsQ = true;
     }
 
-    public boolean movePiece(Coord oldCoord, Coord newCoord)
-    {
-        board = board.movePiece(oldCoord, newCoord);
+    public boolean movePiece(Square oldSquare, Square newSquare) {
+        board = board.movePiece(oldSquare, newSquare);
         boardHistory.add(board);
         moveCount ++;
-        nextTurn();
+        nextPlayer();
 
         return false;
     }
 
-    private void nextTurn()
+    private void nextPlayer()
     {
-        turn++;
-        turn %= 2;
-    }
-
-    public List<Coord> getLegalMoves(Coord coordinate)
-    {
-        List<Coord> ret = new ArrayList<>();
-
-        return ret;
+        player++;
+        player %= 2;
     }
 }

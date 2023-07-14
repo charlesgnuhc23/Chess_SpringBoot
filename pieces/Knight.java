@@ -3,29 +3,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 import board.Board;
-import board.Coord;
+import board.Square;
 
 public class Knight extends Piece {
 
-    Knight(Coord position, Color color) {
-        super(position, color);
+    public Knight(Square square, String color) {
+        super(square, color, "Knight");
     }
 
-    public List<Coord> getLegalMoves(Board board) {
-        int x = position.getPoint().x;
-        int y = position.getPoint().y;
+    public List<Square> getLegalMoves(Board board) {
+        int x = square.getX();
+        int y = square.getY();
 
-        List<Coord> ret = new ArrayList<Coord>();
+        List<Square> ret = new ArrayList<Square>();
 
         // up
         if (y+2 <= 7) {
             Piece checkPiece = board.getBoard()[x-1][y+2]; // up two, left one
             if (checkPiece == null || checkPiece.color != this.color) {
-                ret.add(new Coord(x-1, y+2));
+                ret.add(new Square(x-1, y+2));
             }
             checkPiece = board.getBoard()[x+1][y+2]; // up two, right one
             if (checkPiece == null || checkPiece.color != this.color) {
-                ret.add(new Coord(x+1, y+2));
+                ret.add(new Square(x+1, y+2));
             }
         }
 
@@ -33,11 +33,11 @@ public class Knight extends Piece {
         if (y-2 >= 0) {
             Piece checkPiece = board.getBoard()[x-1][y-2]; // down two, left one
             if (checkPiece == null || checkPiece.color != this.color) {
-                ret.add(new Coord(x-1, y-2));
+                ret.add(new Square(x-1, y-2));
             }
             checkPiece = board.getBoard()[x+1][y-2]; // down two, right one
             if (checkPiece == null || checkPiece.color != this.color) {
-                ret.add(new Coord(x+1, y-2));
+                ret.add(new Square(x+1, y-2));
             }
         }
 
@@ -45,11 +45,11 @@ public class Knight extends Piece {
         if (x-2 >= 0) {
             Piece checkPiece = board.getBoard()[x-2][y+1]; // left two, up one
             if (checkPiece == null || checkPiece.color != this.color) {
-                ret.add(new Coord(x-2, y+1));
+                ret.add(new Square(x-2, y+1));
             }
             checkPiece = board.getBoard()[x-2][y-1]; // left two, down one
             if (checkPiece == null || checkPiece.color != this.color) {
-                ret.add(new Coord(x-2, y-1));
+                ret.add(new Square(x-2, y-1));
             }
         }
 
@@ -57,11 +57,11 @@ public class Knight extends Piece {
         if (x+2 <= 7) {
             Piece checkPiece = board.getBoard()[x+2][y+1]; // right two, up one
             if (checkPiece == null || checkPiece.color != this.color) {
-                ret.add(new Coord(x+2, y+1));
+                ret.add(new Square(x+2, y+1));
             }
             checkPiece = board.getBoard()[x+2][y-1]; // right two, down one
             if (checkPiece == null || checkPiece.color != this.color) {
-                ret.add(new Coord(x+2, y-1));
+                ret.add(new Square(x+2, y-1));
             }
         }
 

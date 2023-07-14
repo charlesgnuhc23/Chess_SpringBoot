@@ -1,6 +1,10 @@
+import board.*;
+import pieces.*;
+ 
 public class Main {
-    public static void main(String[] args)
-    {
-        System.out.println("adsfasdf");
+
+    public static void main(String[] args) {
+        
     }
+
 }

@@ -3,33 +3,45 @@ import java.util.ArrayList;
 import java.util.List;
 
 import board.Board;
-import board.Coord;
+import board.Square;
 
 public class Pawn extends Piece {
 
     private boolean hasMoved;
 
-    Pawn(Coord position, Color color) {
-        super(position, color);
+    public Pawn(Square square, String color) {
+        super(square, color, "Pawn");
     }
 
-    public List<Coord> getLegalMoves(Board board) {
-        int x = position.getPoint().x;
-        int y = position.getPoint().y;
+    public List<Square> getLegalMoves(Board board) {
+        int x = square.getX();
+        int y = square.getY();
 
-        List<Coord> ret = new ArrayList<Coord>();
+        List<Square> ret = new ArrayList<Square>();
         
-        int direction = this.color.getDirection(); // 1 (up) if white, -1 (down) if black
+        // white pawn (move on square or two squares if first move)
+        if (y < 7 && color == "white") {
+            Piece piece = board.getBoard()[x][y+1];
+            if (piece == null || piece.color != this.color) {
+                ret.add(new Square(x, y+1));
+                if (!hasMoved) {
+                    piece = board.getBoard()[x][y+2];
+                    if (piece == null || piece.color != this.color) {
+                        ret.add(new Square(x, y+2));
+                    }
+                }
+            }
+        }
 
-        // pawn (move on square or two squares if first move)
-        if (y > 0 && y < 7) {
-            Piece checkPiece = board.getBoard()[x][y+direction];
-            if (checkPiece == null || checkPiece.color != this.color) {
-                ret.add(new Coord(x, y+direction));
-                if (!this.hasMoved) {
-                    checkPiece = board.getBoard()[x][y+(2*direction)];
-                    if (checkPiece == null || checkPiece.color != this.color) {
-                        ret.add(new Coord(x, y+(2*direction)));
+        // black pawn
+        if (y > 0 && color == "black") {
+            Piece piece = board.getBoard()[x][y-1];
+            if (piece == null || piece.color != this.color) {
+                ret.add(new Square(x, y-1));
+                if (!hasMoved) {
+                    piece = board.getBoard()[x][y-2];
+                    if (piece == null || piece.color != this.color) {
+                        ret.add(new Square(x, y-2));
                     }
                 }
             }
@@ -43,11 +55,6 @@ public class Pawn extends Piece {
 
 
         return ret;
-    }
-
-    
-    public boolean move(Coord newCoord) {
-        return true;
     }
     
 }
