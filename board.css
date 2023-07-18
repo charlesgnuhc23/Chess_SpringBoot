@@ -1,47 +1,51 @@
 html, body {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .chessboard {
-    width: 800vmin;
-    height: 800vmin;
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .row {
-    width: 100%;
-    display: flex;
-  }
-  
-  .square {
-    width: 12.5%;
-    height: 12.5%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .light {
-    background-color: #eeeed2;
-  }
-  
-  .dark {
-    background-color: #769656;
-  }
-  
-  .piece {
-    width: 80px;
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .piece img {
-    max-width: 100%;
-    max-height: 100%;
-  }
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  background-color: #404040;
+}
+
+.chessboard {
+  width: 800vh;
+  height: 800vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+}
+
+.square {
+  width: 12.5%;
+  height: 12.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.light {
+  background-color: #eeeed2;
+}
+
+.dark {
+  background-color: #769656;
+}
+
+.piece {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.piece img {
+  max-width: 100%;
+  max-height: 100%;
+}

@@ -35,7 +35,7 @@ function getPieceImage(pieceCode) {
     };
 
     if (pieceCode === ' ') {
-        return '';
+        return '<div class="piece"></div>';;
     }
 
     return `<img src="${pieceImages[pieceCode]}">`;
