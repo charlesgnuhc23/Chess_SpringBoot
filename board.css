@@ -1,5 +1,4 @@
 html, body {
-    height: 100%;
     margin: 0;
     display: flex;
     justify-content: center;
@@ -7,8 +6,8 @@ html, body {
   }
   
   .chessboard {
-    width: 800px;
-    height: 800px;
+    width: 800vmin;
+    height: 800vmin;
     display: flex;
     flex-wrap: wrap;
   }
@@ -19,8 +18,8 @@ html, body {
   }
   
   .square {
-    width: 100px;
-    height: 100px;
+    width: 12.5%;
+    height: 12.5%;
     display: flex;
     justify-content: center;
     align-items: center;

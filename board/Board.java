@@ -4,33 +4,12 @@ import pieces.*;
 public class Board {
     private Piece[][] board; // 2d array of pieces (null/empty or piece/occupied)
 
-    public Board() { // reset board
-        // makeBoard(this.chessBoard);
-        // resetBoard();
+    public Board() {
+        resetBoard();
     } 
 
-    // private void makeBoard(GridPane chessBoard) {
-    //     for (int i = 0; i < 8; i++) {
-    //         for (int j = 0; j < 8; j++) {
-    //             Point point = new Point(i, j);
-    //             String name = point.pointToSquareinate(point);
-    //             point.setName(name);
-    //             point.setPrefHeight(100);
-    //             point.setPrefWidth(100);
-    //             point.setBorder(new Border(new BorderStroke(Color.BLACK,
-    //                     BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
-    //             chessBoard.add(point, i, j, 1, 1);
-    //             board[i][j] = null;
 
-    //             if ((i+j)%2==0) {
-    //                 point.setBackground(new Background(new BackgroundFill(Color.web("#e4c16f"), CornerRadii.EMPTY, Insets.EMPTY))); // dark
-    //             } 
-    //             else {
-    //                 point.setBackground(new Background(new BackgroundFill(Color.web("#b88b4a"), CornerRadii.EMPTY, Insets.EMPTY))); // light
-    //             }
-    //         }
-    //     }
-    // }
+    //toString()
 
     public void resetBoard() {
         board[0][0] = new Rook(new Square(0,0), "white");
