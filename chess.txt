@@ -42,3 +42,10 @@ class Coord
 
 class Point
 	int x, y - indices of the array in board
+
+REPLACE Coord and Point to square:
+class square
+	int x, y - indices of the array in board
+	String coordinate - A1-H8
+	boolean occupied
+	Piece piece (Piece or null)
