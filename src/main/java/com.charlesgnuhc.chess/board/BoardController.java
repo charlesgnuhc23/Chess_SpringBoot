@@ -1,9 +1,7 @@
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+package com.charlesgnuhc.chess.board;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@SpringBootApplication
 @RestController
 public class BoardController {
 
@@ -15,12 +13,12 @@ public class BoardController {
 
 
     // @GetMapping("/getBoardState")
-    // public String getBoardState() {
+    // public Board getBoardState() {
     //     return board.getBoardStateAsJson();
     // }
 
     @GetMapping("/")
-    public String apiRoot() {
+    public Board apiRoot() {
         return "Hello World!";
     }
 }

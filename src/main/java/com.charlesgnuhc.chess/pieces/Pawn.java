@@ -1,4 +1,4 @@
-package pieces;
+package com.charlesgnuhc.chess.pieces;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package board;
+package com.charlesgnuhc.chess.board;
 import pieces.*;
 import com.google.gson.Gson;
 
