@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ChessApp",
+            "request": "launch",
+            "mainClass": "com.charlesgnuhc.chess.ChessApp",
+            "projectName": "chess"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
@@ -16,6 +23,16 @@
             "request": "launch",
             "mainClass": "Main",
             "projectName": "chess_ebecee28"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-BoardController<chess>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.charlesgnuhc.chess.board.BoardController",
+            "projectName": "chess",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }

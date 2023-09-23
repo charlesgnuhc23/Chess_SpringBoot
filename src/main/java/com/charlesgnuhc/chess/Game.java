@@ -2,8 +2,8 @@ package com.charlesgnuhc.chess;
 import java.util.ArrayList;
 import java.util.List;
 
-import board.Board;
-import board.Square;
+import com.charlesgnuhc.chess.board.Board;
+import com.charlesgnuhc.chess.board.Square;
 
 public class Game {
 

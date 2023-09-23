@@ -1,20 +1,30 @@
 package com.charlesgnuhc.chess.board;
-import pieces.*;
+import com.charlesgnuhc.chess.pieces.*;
 import com.google.gson.Gson;
 
 public class Board {
     private Piece[][] board; // 2d array of pieces (null/empty or piece/occupied)
+    private char[][] boardAsChars = {
+             {'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r'},
+             {'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p'},
+             {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
+             {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
+             {' ', ' ', ' ', ' ', 'P', ' ', ' ', ' '},
+             {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
+             {'P', 'P', 'P', 'P', ' ', 'P', 'P', 'P'},
+             {'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R'}
+        };
 
     public Board() {
-        resetBoard();
-    } 
+        defaultBoard();
+    }
 
     public String getBoardStateAsJson() {
         Gson gson = new Gson();
-        return gson.toJson(board);
+        return gson.toJson(boardAsChars);
     }
 
-    public void resetBoard() {
+    public void defaultBoard() {
         placePiece(0, 0, new Rook(new Square(0,0), "white"));
         placePiece(1, 0, new Knight(new Square(1,0), "white"));
         placePiece(2, 0, new Bishop(new Square(2,0), "white"));

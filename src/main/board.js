@@ -1,14 +1,3 @@
-// const board = [
-//     ['r', 'n', 'b', 'q', 'k', 'b', 'n', 'r'],
-//     ['p', 'p', 'p', 'p', 'p', 'p', 'p', 'p'],
-//     [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-//     [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-//     [' ', ' ', ' ', ' ', 'P', ' ', ' ', ' '],
-//     [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-//     ['P', 'P', 'P', 'P', ' ', 'P', 'P', 'P'],
-//     ['R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R']
-// ];
-
 async function fetchBoardStateFromBackend() {
     try {
         const response = await fetch('/getBoardState');
@@ -16,24 +5,14 @@ async function fetchBoardStateFromBackend() {
             throw new Error('Failed to fetch board state from the backend');
         }
         const jsonData = await response.json();
+        console.log('Response from backend:', jsonData);
         return jsonData;
     } 
-
     catch (error) {
         console.error(error);
         return null;
     }
 }
-
-// function populateChessboard() {
-//     for (let i = 0; i < 8; i++) {
-//         for (let j = 0; j < 8; j++) {
-//             const piece = document.getElementById(`piece-${i}-${j}`);
-//             piece.innerHTML = getPieceImage(fetchBoardStateFromBackend()[i][j]);
-//             // piece.innerHTML = getPieceImage(board[i][j]);
-//         }
-//     }
-// }
 
 async function populateChessboard() {
     try {

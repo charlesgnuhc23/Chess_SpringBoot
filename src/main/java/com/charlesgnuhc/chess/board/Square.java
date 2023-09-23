@@ -1,6 +1,6 @@
 package com.charlesgnuhc.chess.board;
 
-import pieces.Piece;
+import com.charlesgnuhc.chess.pieces.Piece;
 
 public class Square {
     int x;
